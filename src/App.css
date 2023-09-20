@@ -1,3 +1,7 @@
 .App {
   text-align: center;
+  background-color: #0e1116;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

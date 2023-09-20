@@ -1,14 +1,31 @@
 import { useState, useEffect } from "react";
 import { getPicture } from "../assets/picture";
+
 export default function useFetch() {
   //since it's  a link I used empty string
-  const [url, setUrl] = useState("");
+
+  //TODO: Generate a series of pictures randomly as the user scrolls down and display them in grid.
+  //FIXME: Make use of setId to assign the Random numbers and generate the pictures
+
+  const [id, setId] = useState(10);
+  const [url, setUrl] = useState();
+  const [isloading, setIsLoading] = useState(true);
 
   useEffect(() => {
     //setUrl(getPicture());
-    getPicture().then((res) => setUrl(res));
-  }, []);
+    function obtainPic(val) {
+      try {
+        getPicture(val).then((res) => setUrl(res));
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(true);
+        //console.error(error);
+      }
+    }
+    obtainPic(id);
+    // console.log(url);
+    // console.log(isloading);
+  }, [url, isloading, id]);
 
-  console.log(url);
-  return [url, setUrl];
+  return [url, isloading];
 }

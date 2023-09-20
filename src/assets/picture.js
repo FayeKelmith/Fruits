@@ -1,11 +1,9 @@
 import axios from "axios";
-export async function getPicture() {
+export async function getPicture(id) {
   //this is the maximum number of foxes
-  const numberOfImages = 953;
-
   //generate a random fox
   const link = await axios.get(
-    `https://img.foxes.cool/fox/${Math.random() * numberOfImages}.jpg`
+    `https://img.foxes.cool/fox/${id}.jpg?width=480&height=480`
   );
 
   //return only the url of the image from API call
