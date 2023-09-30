@@ -1,10 +1,12 @@
-import "./App.css";
-import { useFoxContext } from "./context/FoxContext";
+import Image from "./components/Image";
 function App() {
-  const { url } = useFoxContext();
-
-  console.log(url);
-  return <div className="App">{<img src={url} alt="Fox" /> || <p>...</p>}</div>;
+  return (
+    <div className="bg-black grid grid-cols-3 w-full overflow-hidden">
+      <Image />
+      <Image />
+      <Image />
+    </div>
+  );
 }
 
 export default App;
