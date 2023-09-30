@@ -1,11 +1,10 @@
-import Image from "./components/Image";
+import ImageContainer from "./components/ImageContainer";
+import { FoxProvider } from "./context/FoxContext";
 function App() {
   return (
-    <div className="bg-black grid grid-cols-3 w-full overflow-hidden">
-      <Image />
-      <Image />
-      <Image />
-    </div>
+    <FoxProvider>
+      <ImageContainer id={5} />
+    </FoxProvider>
   );
 }
 

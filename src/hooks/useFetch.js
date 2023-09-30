@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { getPicture } from "../assets/picture";
 
-export default function useFetch() {
-  const id = 6;
+export default function useFetch(id) {
+  //const id = 6;
   const [url, setUrl] = useState();
   const [isloading, setIsLoading] = useState(true);
 

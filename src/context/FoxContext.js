@@ -4,10 +4,7 @@ import useFetch from "../hooks/useFetch";
 const FoxContext = createContext();
 
 export const FoxProvider = ({ children }) => {
-  const [url, isloading] = useFetch();
-
-  //TODO: to set theme later
-  //   const [theme, setTheme] = useState("dark");
+  const [url, isloading] = useFetch(5);
 
   return (
     <FoxContext.Provider value={{ url, isloading }}>
